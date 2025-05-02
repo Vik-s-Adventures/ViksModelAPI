@@ -5,21 +5,20 @@ import numpy as np
 import os
 from tensorflow.keras.models import load_model
 
-
 # Crear la instancia de FastAPI
 app = FastAPI()
 
 # Cargar el modelo previamente entrenado
-ruta_modelo = os.path.join(os.path.dirname(__file__), "..", "resources", "ruta.keras")
+ruta_modelo = os.path.join("resources", "ruta.keras")
 
 # Cargar el modelo
 modelo = load_model(ruta_modelo, compile=False)
 modelo.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
 # Cargar el diccionario de rutas desde CSV
-ruta_diccionario = os.path.join(os.path.dirname(__file__), "..", "resources", "diccionario_rutas.csv")
+ruta_diccionario = os.path.join("resources", "diccionario_rutas.csv")
 diccionario_rutas = pd.read_csv(ruta_diccionario)
-diccionario_rutas["ruta"] = diccionario_rutas["ruta"].apply(eval)  # Convertir string a tupla
+diccionario_rutas["ruta"] = diccionario_rutas["ruta"].apply(eval)
 
 # Tabla de equivalencia global
 EQUIVALENCIA = {
