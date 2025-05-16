@@ -20,7 +20,7 @@ def cargar_modelos():
 def cargar_diccionarios():
     diccionarios = {}
     for i in range(1, 5):
-        ruta_csv = os.path.join(RUTA_RECURSOS, f"diccionario_rutas_C{i}.csv")
+        ruta_csv = os.path.join(RUTA_RECURSOS, f"diccionario_rutas_c{i}.csv")
         if not os.path.exists(ruta_csv):
             raise FileNotFoundError(f"Diccionario no encontrado: {ruta_csv}")
         diccionario = pd.read_csv(ruta_csv)
