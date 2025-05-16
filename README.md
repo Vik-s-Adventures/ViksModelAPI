@@ -38,7 +38,8 @@ Esto iniciará el servidor en `http://127.0.0.1:8000/`.
 ```json
 {
   "id_estudiante": 123,
-  "preguntas": [1, 0, 1, 1, 0, 0, 1, 0, 0, 1]
+  "preguntas": [1, 0, 1, 1, 0, 0, 1, 0, 0, 1],
+  "competencia": "C3"
 }
 ```
 📤 **Respuesta esperada (`JSON`):**  
