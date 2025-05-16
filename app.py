@@ -11,6 +11,3 @@ def endpoint_predecir_ruta(data: InputModelo):
         return {"id_estudiante": data.id_estudiante, "ruta": ruta}
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
-
-# from processing.pipeline import ejecutar_pipeline
-# ejecutar_pipeline(guardar_archivos=True)

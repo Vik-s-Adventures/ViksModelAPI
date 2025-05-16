@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 # Ruta base para todos los recursos
-RUTA_RECURSOS = r"D:\UNIVERSIDAD\X CICLO\Taller de Proyecto II\ViksAdventures\viks_model\resources"
+RUTA_RECURSOS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "resources")
 
 def cargar_csv(nombre_archivo):
     return pd.read_csv(os.path.join(RUTA_RECURSOS, nombre_archivo))
